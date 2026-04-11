@@ -1,26 +1,32 @@
 import { useState } from "react";
 
 const poolData = [
-  { name: "Jim", players: [{ name: "Scheffler", score: -2 }, { name: "Cantlay", score: 5 }, { name: "Fleetwood", score: -1 }, { name: "Gotterup", score: 0 }, { name: "Morikawa", score: 2 }] },
-  { name: "Gaston", players: [{ name: "Scheffler", score: -2 }, { name: "Schauffele", score: -2 }, { name: "Rahm", score: 6 }, { name: "Reed", score: -3 }, { name: "DeChambeau", score: 4 }] },
-  { name: "Kathleen", players: [{ name: "Rahm", score: 6 }, { name: "McIlroy", score: -5 }, { name: "Rose", score: -2 }, { name: "DeChambeau", score: 4 }, { name: "Aberg", score: 2 }] },
-  { name: "Charlie", players: [{ name: "Min Woo Lee", score: 6 }, { name: "Rahm", score: 6 }, { name: "DeChambeau", score: 4 }, { name: "Rose", score: -2 }, { name: "Aberg", score: 2 }] },
-  { name: "Stella", players: [{ name: "Scheffler", score: -2 }, { name: "DeChambeau", score: 4 }, { name: "Aberg", score: 2 }, { name: "Gotterup", score: 0 }, { name: "Fleetwood", score: -1 }] },
-  { name: "Mom Dewbray", players: [{ name: "Scheffler", score: -2 }, { name: "McIlroy", score: -5 }, { name: "DeChambeau", score: 4 }, { name: "Cam Young", score: 1 }, { name: "Koepka", score: 0 }] },
-  { name: "Dad Dewbray", players: [{ name: "Aberg", score: 2 }, { name: "Cam Young", score: 1 }, { name: "Fleetwood", score: -1 }, { name: "Fitzpatrick", score: 2 }, { name: "DeChambeau", score: 4 }] },
-  { name: "Tom", players: [{ name: "Fleetwood", score: -1 }, { name: "MacIntyre", score: 8 }, { name: "Fitzpatrick", score: 2 }, { name: "Aberg", score: 2 }, { name: "Cam Young", score: 1 }] },
-  { name: "Joe", players: [{ name: "DeChambeau", score: 4 }, { name: "Schauffele", score: -2 }, { name: "McIlroy", score: -5 }, { name: "Rose", score: -2 }, { name: "Scheffler", score: -2 }] },
-  { name: "Noah", players: [{ name: "Reed", score: -3 }, { name: "Min Woo Lee", score: 6 }, { name: "McIlroy", score: -5 }, { name: "DeChambeau", score: 4 }, { name: "Scheffler", score: -2 }] },
-  { name: "Patrick", players: [{ name: "Burns", score: -5 }, { name: "DeChambeau", score: 4 }, { name: "D. Johnson", score: 1 }, { name: "McIlroy", score: -5 }, { name: "Scheffler", score: -2 }] },
-  { name: "Becky", players: [{ name: "DeChambeau", score: 4 }, { name: "Scheffler", score: -2 }, { name: "McIlroy", score: -5 }, { name: "Rahm", score: 6 }, { name: "Fleetwood", score: -1 }] },
-  { name: "Billy", players: [{ name: "Scheffler", score: -2 }, { name: "McIlroy", score: -5 }, { name: "Rahm", score: 6 }, { name: "DeChambeau", score: 4 }, { name: "Schauffele", score: -2 }] },
-  { name: "Beth", players: [{ name: "Rahm", score: 6 }, { name: "McIlroy", score: -5 }, { name: "Scheffler", score: -2 }, { name: "DeChambeau", score: 4 }, { name: "Rose", score: -2 }] },
-  { name: "Emily", players: [{ name: "DeChambeau", score: 4 }, { name: "Scheffler", score: -2 }, { name: "Rose", score: -2 }, { name: "McIlroy", score: -5 }, { name: "Fleetwood", score: -1 }] },
-  { name: "Penelope", players: [{ name: "Lowry", score: -2 }, { name: "Scheffler", score: -2 }, { name: "DeChambeau", score: 4 }, { name: "Reed", score: -3 }, { name: "Fleetwood", score: -1 }] },
-  { name: "Nora", players: [{ name: "DeChambeau", score: 4 }, { name: "Scheffler", score: -2 }, { name: "Lowry", score: -2 }, { name: "Rahm", score: 6 }, { name: "Fleetwood", score: -1 }] },
+  { name: "Jim", players: [{ name: "Scheffler", score: 0 }, { name: "Cantlay", score: 0 }, { name: "Fleetwood", score: -5 }, { name: "Gotterup", score: -3 }, { name: "Morikawa", score: -1 }] },
+  { name: "Gaston", players: [{ name: "Scheffler", score: 0 }, { name: "Schauffele", score: -2 }, { name: "Rahm", score: 4 }, { name: "Reed", score: -6 }, { name: "DeChambeau", score: 6 }] },
+  { name: "Kathleen", players: [{ name: "Rahm", score: 4 }, { name: "McIlroy", score: -12 }, { name: "Rose", score: -5 }, { name: "DeChambeau", score: 6 }, { name: "Aberg", score: 0 }] },
+  { name: "Charlie", players: [{ name: "Min Woo Lee", score: 11 }, { name: "Rahm", score: 4 }, { name: "DeChambeau", score: 6 }, { name: "Rose", score: -5 }, { name: "Aberg", score: 0 }] },
+  { name: "Stella", players: [{ name: "Scheffler", score: 0 }, { name: "DeChambeau", score: 6 }, { name: "Aberg", score: 0 }, { name: "Gotterup", score: -3 }, { name: "Fleetwood", score: -5 }] },
+  { name: "Mom Dewbray", players: [{ name: "Scheffler", score: 0 }, { name: "McIlroy", score: -12 }, { name: "DeChambeau", score: 6 }, { name: "Cam Young", score: -4 }, { name: "Koepka", score: -3 }] },
+  { name: "Dad Dewbray", players: [{ name: "Aberg", score: 0 }, { name: "Cam Young", score: -4 }, { name: "Fleetwood", score: -5 }, { name: "Fitzpatrick", score: -1 }, { name: "DeChambeau", score: 6 }] },
+  { name: "Tom", players: [{ name: "Fleetwood", score: -5 }, { name: "MacIntyre", score: 7 }, { name: "Fitzpatrick", score: -1 }, { name: "Aberg", score: 0 }, { name: "Cam Young", score: -4 }] },
+  { name: "Joe", players: [{ name: "DeChambeau", score: 6 }, { name: "Schauffele", score: -2 }, { name: "McIlroy", score: -12 }, { name: "Rose", score: -5 }, { name: "Scheffler", score: 0 }] },
+  { name: "Noah", players: [{ name: "Reed", score: -6 }, { name: "Min Woo Lee", score: 11 }, { name: "McIlroy", score: -12 }, { name: "DeChambeau", score: 6 }, { name: "Scheffler", score: 0 }] },
+  { name: "Patrick", players: [{ name: "Burns", score: -6 }, { name: "DeChambeau", score: 6 }, { name: "D. Johnson", score: 0 }, { name: "McIlroy", score: -12 }, { name: "Scheffler", score: 0 }] },
+  { name: "Becky", players: [{ name: "DeChambeau", score: 6 }, { name: "Scheffler", score: 0 }, { name: "McIlroy", score: -12 }, { name: "Rahm", score: 4 }, { name: "Fleetwood", score: -5 }] },
+  { name: "Billy", players: [{ name: "Scheffler", score: 0 }, { name: "McIlroy", score: -12 }, { name: "Rahm", score: 4 }, { name: "DeChambeau", score: 6 }, { name: "Schauffele", score: -2 }] },
+  { name: "Beth", players: [{ name: "Rahm", score: 4 }, { name: "McIlroy", score: -12 }, { name: "Scheffler", score: 0 }, { name: "DeChambeau", score: 6 }, { name: "Rose", score: -5 }] },
+  { name: "Emily", players: [{ name: "DeChambeau", score: 6 }, { name: "Scheffler", score: 0 }, { name: "Rose", score: -5 }, { name: "McIlroy", score: -12 }, { name: "Fleetwood", score: -5 }] },
+  { name: "Penelope", players: [{ name: "Lowry", score: -5 }, { name: "Scheffler", score: 0 }, { name: "DeChambeau", score: 6 }, { name: "Reed", score: -6 }, { name: "Fleetwood", score: -5 }] },
+  { name: "Nora", players: [{ name: "DeChambeau", score: 6 }, { name: "Scheffler", score: 0 }, { name: "Lowry", score: -5 }, { name: "Rahm", score: 4 }, { name: "Fleetwood", score: -5 }] },
 ];
 
-const ROUND = "After Round 1";
+const ROUND = "After Round 2";
+const PAYOUTS = [
+  { place: "1st", prize: "$110" },
+  { place: "2nd", prize: "$50" },
+  { place: "Last", prize: "$10" },
+];
+
 const fmt = (s) => s === 0 ? "E" : s > 0 ? `+${s}` : `${s}`;
 const teamTotal = (players) => players.reduce((s, p) => s + p.score, 0);
 const ranked = [...poolData].map((e) => ({ ...e, total: teamTotal(e.players) })).sort((a, b) => a.total - b.total);
@@ -33,7 +39,7 @@ const memberGolferMap = {};
 poolData.forEach((e) => { memberGolferMap[e.name] = {}; e.players.forEach((p) => { memberGolferMap[e.name][p.name] = p.score; }); });
 
 const scoreStyle = (s) => {
-  if (s <= -3) return { bg: "rgba(200,169,81,0.22)", color: "#f5d87a" };
+  if (s <= -8) return { bg: "rgba(200,169,81,0.22)", color: "#f5d87a" };
   if (s < 0)   return { bg: "rgba(90,170,90,0.18)", color: "#7ecf7e" };
   if (s === 0) return { bg: "rgba(180,180,180,0.08)", color: "#999" };
   return              { bg: "rgba(220,80,60,0.18)", color: "#e87a6a" };
@@ -48,6 +54,23 @@ function Header({ view, setView }) {
       <div style={{ fontSize: "30px", color: CREAM, letterSpacing: "1px", lineHeight: 1.15 }}>Par for the Dewbrays</div>
       <div style={{ fontSize: "12px", color: GOLD, letterSpacing: "3px", fontStyle: "italic", marginTop: "4px", marginBottom: "6px" }}>Masters Pool 2026 · 17 Entries</div>
       <div style={{ fontSize: "10px", color: "rgba(200,169,81,0.5)", letterSpacing: "2px", marginBottom: "18px" }}>{ROUND}</div>
+
+      {/* Payouts */}
+      <div style={{ display: "flex", justifyContent: "center", gap: "12px", marginBottom: "20px" }}>
+        {[
+          { emoji: "🥇", place: "1st", prize: "$110", name: ranked[0].name, score: fmt(ranked[0].total) },
+          { emoji: "🥈", place: "2nd", prize: "$50", name: ranked[1].name, score: fmt(ranked[1].total) },
+          { emoji: "🏳️", place: "Last", prize: "$10", name: ranked[ranked.length - 1].name, score: fmt(ranked[ranked.length - 1].total) },
+        ].map((p) => (
+          <div key={p.place} style={{ background: "rgba(200,169,81,0.08)", border: `1px solid rgba(200,169,81,0.2)`, borderRadius: "6px", padding: "10px 14px", textAlign: "center", minWidth: "90px" }}>
+            <div style={{ fontSize: "18px" }}>{p.emoji}</div>
+            <div style={{ fontSize: "11px", color: GOLD, letterSpacing: "1px", marginTop: "2px" }}>{p.prize}</div>
+            <div style={{ fontSize: "12px", color: CREAM, marginTop: "4px", fontWeight: "bold" }}>{p.name}</div>
+            <div style={{ fontSize: "11px", color: "rgba(240,234,214,0.5)", marginTop: "2px" }}>{p.score}</div>
+          </div>
+        ))}
+      </div>
+
       <div style={{ display: "inline-flex", border: `1px solid ${BORDER}`, borderRadius: "4px", overflow: "hidden" }}>
         {["Leaderboard", "Grid"].map((v) => (
           <button key={v} onClick={() => setView(v)} style={{ padding: "8px 22px", background: view === v ? "rgba(200,169,81,0.18)" : "transparent", color: view === v ? GOLD : DIM, border: "none", borderRight: v === "Leaderboard" ? `1px solid ${BORDER}` : "none", cursor: "pointer", fontSize: "11px", letterSpacing: "3px", textTransform: "uppercase", fontFamily: "Georgia, serif" }}>{v}</button>
@@ -62,11 +85,13 @@ function Leaderboard() {
   return (
     <div style={{ maxWidth: "560px", margin: "0 auto", padding: "20px 16px" }}>
       {ranked.map((entry, i) => {
-        const open = expanded === entry.name, first = i === 0;
+        const open = expanded === entry.name, first = i === 0, last = i === ranked.length - 1;
         return (
-          <div key={entry.name} onClick={() => setExpanded(open ? null : entry.name)} style={{ margin: "7px 0", background: first ? "rgba(200,169,81,0.1)" : "rgba(255,255,255,0.025)", border: `1px solid ${first ? "rgba(200,169,81,0.38)" : "rgba(255,255,255,0.06)"}`, borderRadius: "4px", cursor: "pointer", overflow: "hidden" }}>
+          <div key={entry.name} onClick={() => setExpanded(open ? null : entry.name)} style={{ margin: "7px 0", background: first ? "rgba(200,169,81,0.1)" : "rgba(255,255,255,0.025)", border: `1px solid ${first ? "rgba(200,169,81,0.38)" : last ? "rgba(220,80,60,0.25)" : "rgba(255,255,255,0.06)"}`, borderRadius: "4px", cursor: "pointer", overflow: "hidden" }}>
             <div style={{ display: "flex", alignItems: "center", padding: "13px 16px", gap: "14px" }}>
-              <div style={{ width: "26px", textAlign: "center", fontSize: first ? "17px" : "13px", color: first ? GOLD : "rgba(240,234,214,0.3)", flexShrink: 0 }}>{first ? "🏆" : i + 1}</div>
+              <div style={{ width: "26px", textAlign: "center", fontSize: "15px", flexShrink: 0 }}>
+                {first ? "🏆" : last ? "🏳️" : <span style={{ fontSize: "13px", color: "rgba(240,234,214,0.3)" }}>{i + 1}</span>}
+              </div>
               <div style={{ flex: 1, fontSize: "15px", color: CREAM }}>{entry.name}</div>
               <div style={{ fontSize: "20px", fontWeight: "bold", color: scoreStyle(entry.total).color, minWidth: "48px", textAlign: "right" }}>{fmt(entry.total)}</div>
               <div style={{ color: "rgba(200,169,81,0.35)", fontSize: "11px", transform: open ? "rotate(180deg)" : "none", transition: "transform 0.2s" }}>▼</div>
