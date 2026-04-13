@@ -1,26 +1,26 @@
 import { useState } from "react";
 
 const poolData = [
-  { name: "Jim", players: [{ name: "Scheffler", score: -7 }, { name: "Cantlay", score: -6 }, { name: "Fleetwood", score: -4 }, { name: "Gotterup", score: -3 }, { name: "Morikawa", score: -5 }] },
-  { name: "Gaston", players: [{ name: "Scheffler", score: -7 }, { name: "Schauffele", score: -4 }, { name: "Rahm", score: 5 }, { name: "Reed", score: -6 }, { name: "DeChambeau", score: 6 }] },
-  { name: "Kathleen", players: [{ name: "Rahm", score: 5 }, { name: "McIlroy", score: -11 }, { name: "Rose", score: -8 }, { name: "DeChambeau", score: 6 }, { name: "Aberg", score: -3 }] },
-  { name: "Charlie", players: [{ name: "Min Woo Lee", score: 11 }, { name: "Rahm", score: 5 }, { name: "DeChambeau", score: 6 }, { name: "Rose", score: -8 }, { name: "Aberg", score: -3 }] },
-  { name: "Stella", players: [{ name: "Scheffler", score: -7 }, { name: "DeChambeau", score: 6 }, { name: "Aberg", score: -3 }, { name: "Gotterup", score: -3 }, { name: "Fleetwood", score: -4 }] },
-  { name: "Mom Dewbray", players: [{ name: "Scheffler", score: -7 }, { name: "McIlroy", score: -11 }, { name: "DeChambeau", score: 6 }, { name: "Cam Young", score: -11 }, { name: "Koepka", score: -4 }] },
-  { name: "Dad Dewbray", players: [{ name: "Aberg", score: -3 }, { name: "Cam Young", score: -11 }, { name: "Fleetwood", score: -4 }, { name: "Fitzpatrick", score: -3 }, { name: "DeChambeau", score: 6 }] },
-  { name: "Tom", players: [{ name: "Fleetwood", score: -4 }, { name: "MacIntyre", score: 7 }, { name: "Fitzpatrick", score: -3 }, { name: "Aberg", score: -3 }, { name: "Cam Young", score: -11 }] },
-  { name: "Joe", players: [{ name: "DeChambeau", score: 6 }, { name: "Schauffele", score: -4 }, { name: "McIlroy", score: -11 }, { name: "Rose", score: -8 }, { name: "Scheffler", score: -7 }] },
-  { name: "Noah", players: [{ name: "Reed", score: -6 }, { name: "Min Woo Lee", score: 11 }, { name: "McIlroy", score: -11 }, { name: "DeChambeau", score: 6 }, { name: "Scheffler", score: -7 }] },
-  { name: "Patrick", players: [{ name: "Burns", score: -10 }, { name: "DeChambeau", score: 6 }, { name: "D. Johnson", score: 3 }, { name: "McIlroy", score: -11 }, { name: "Scheffler", score: -7 }] },
-  { name: "Becky", players: [{ name: "DeChambeau", score: 6 }, { name: "Scheffler", score: -7 }, { name: "McIlroy", score: -11 }, { name: "Rahm", score: 5 }, { name: "Fleetwood", score: -4 }] },
-  { name: "Billy", players: [{ name: "Scheffler", score: -7 }, { name: "McIlroy", score: -11 }, { name: "Rahm", score: 5 }, { name: "DeChambeau", score: 6 }, { name: "Schauffele", score: -4 }] },
-  { name: "Beth", players: [{ name: "Rahm", score: 5 }, { name: "McIlroy", score: -11 }, { name: "Scheffler", score: -7 }, { name: "DeChambeau", score: 6 }, { name: "Rose", score: -8 }] },
-  { name: "Emily", players: [{ name: "DeChambeau", score: 6 }, { name: "Scheffler", score: -7 }, { name: "Rose", score: -8 }, { name: "McIlroy", score: -11 }, { name: "Fleetwood", score: -4 }] },
-  { name: "Penelope", players: [{ name: "Lowry", score: -9 }, { name: "Scheffler", score: -7 }, { name: "DeChambeau", score: 6 }, { name: "Reed", score: -6 }, { name: "Fleetwood", score: -4 }] },
-  { name: "Nora", players: [{ name: "DeChambeau", score: 6 }, { name: "Scheffler", score: -7 }, { name: "Lowry", score: -9 }, { name: "Rahm", score: 5 }, { name: "Fleetwood", score: -4 }] },
+  { name: "Jim", players: [{ name: "Scheffler", score: -11 }, { name: "Cantlay", score: -5 }, { name: "Fleetwood", score: 0 }, { name: "Gotterup", score: -2 }, { name: "Morikawa", score: -9 }] },
+  { name: "Gaston", players: [{ name: "Scheffler", score: -11 }, { name: "Schauffele", score: -8 }, { name: "Rahm", score: 1 }, { name: "Reed", score: -5 }, { name: "DeChambeau", score: 6 }] },
+  { name: "Kathleen", players: [{ name: "Rahm", score: 1 }, { name: "McIlroy", score: -12 }, { name: "Rose", score: -10 }, { name: "DeChambeau", score: 6 }, { name: "Aberg", score: -3 }] },
+  { name: "Charlie", players: [{ name: "Min Woo Lee", score: 11 }, { name: "Rahm", score: 1 }, { name: "DeChambeau", score: 6 }, { name: "Rose", score: -10 }, { name: "Aberg", score: -3 }] },
+  { name: "Stella", players: [{ name: "Scheffler", score: -11 }, { name: "DeChambeau", score: 6 }, { name: "Aberg", score: -3 }, { name: "Gotterup", score: -2 }, { name: "Fleetwood", score: 0 }] },
+  { name: "Mom Dewbray", players: [{ name: "Scheffler", score: -11 }, { name: "McIlroy", score: -12 }, { name: "DeChambeau", score: 6 }, { name: "Cam Young", score: -10 }, { name: "Koepka", score: -5 }] },
+  { name: "Dad Dewbray", players: [{ name: "Aberg", score: -3 }, { name: "Cam Young", score: -10 }, { name: "Fleetwood", score: 0 }, { name: "Fitzpatrick", score: -4 }, { name: "DeChambeau", score: 6 }] },
+  { name: "Tom", players: [{ name: "Fleetwood", score: 0 }, { name: "MacIntyre", score: 7 }, { name: "Fitzpatrick", score: -4 }, { name: "Aberg", score: -3 }, { name: "Cam Young", score: -10 }] },
+  { name: "Joe", players: [{ name: "DeChambeau", score: 6 }, { name: "Schauffele", score: -8 }, { name: "McIlroy", score: -12 }, { name: "Rose", score: -10 }, { name: "Scheffler", score: -11 }] },
+  { name: "Noah", players: [{ name: "Reed", score: -5 }, { name: "Min Woo Lee", score: 11 }, { name: "McIlroy", score: -12 }, { name: "DeChambeau", score: 6 }, { name: "Scheffler", score: -11 }] },
+  { name: "Patrick", players: [{ name: "Burns", score: -9 }, { name: "DeChambeau", score: 6 }, { name: "D. Johnson", score: 0 }, { name: "McIlroy", score: -12 }, { name: "Scheffler", score: -11 }] },
+  { name: "Becky", players: [{ name: "DeChambeau", score: 6 }, { name: "Scheffler", score: -11 }, { name: "McIlroy", score: -12 }, { name: "Rahm", score: 1 }, { name: "Fleetwood", score: 0 }] },
+  { name: "Billy", players: [{ name: "Scheffler", score: -11 }, { name: "McIlroy", score: -12 }, { name: "Rahm", score: 1 }, { name: "DeChambeau", score: 6 }, { name: "Schauffele", score: -8 }] },
+  { name: "Beth", players: [{ name: "Rahm", score: 1 }, { name: "McIlroy", score: -12 }, { name: "Scheffler", score: -11 }, { name: "DeChambeau", score: 6 }, { name: "Rose", score: -10 }] },
+  { name: "Emily", players: [{ name: "DeChambeau", score: 6 }, { name: "Scheffler", score: -11 }, { name: "Rose", score: -10 }, { name: "McIlroy", score: -12 }, { name: "Fleetwood", score: 0 }] },
+  { name: "Penelope", players: [{ name: "Lowry", score: -1 }, { name: "Scheffler", score: -11 }, { name: "DeChambeau", score: 6 }, { name: "Reed", score: -5 }, { name: "Fleetwood", score: 0 }] },
+  { name: "Nora", players: [{ name: "DeChambeau", score: 6 }, { name: "Scheffler", score: -11 }, { name: "Lowry", score: -1 }, { name: "Rahm", score: 1 }, { name: "Fleetwood", score: 0 }] },
 ];
 
-const ROUND = "After Round 3";
+const ROUND = "FINAL — Masters 2026 🏆";
 const fmt = (s) => s === 0 ? "E" : s > 0 ? `+${s}` : `${s}`;
 const teamTotal = (players) => players.reduce((s, p) => s + p.score, 0);
 const ranked = [...poolData].map((e) => ({ ...e, total: teamTotal(e.players) })).sort((a, b) => a.total - b.total);
